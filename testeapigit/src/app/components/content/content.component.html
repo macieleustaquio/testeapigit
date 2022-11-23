@@ -21,13 +21,64 @@
                     <td>
                         <div class="container">
                             <div class="row">
-                                <div class="col"><button type="button" class="btn btn-success"><i class="fa-solid fa-pencil"></i> Editar</button></div>
-                                <div class="col"><button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i> Apagar</button></div>
+                                <div class="col"><button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i
+                                            class="fa-solid fa-pencil"></i> Editar</button></div>
+                                <div class="col"><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#apagarIssue">
+                                    <i class="fa-solid fa-trash"></i> Apagar</button>
+                                </div>
                             </div>
                         </div>
                     </td>
                 </tr>
             </tbody>
         </table>
+    </div>
+    <!-- Modal Editar -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Message:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Apagar -->
+    <div class="modal fade" id="apagarIssue" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Atenção!</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Você irá apagar a Issue.</p>
+                    <p>Essa ação é irreversível.</p>
+                    <p>Tem certeza que deseja continuar?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Apagar</button>
+                </div>
+            </div>
+        </div>
     </div>
 </main>
