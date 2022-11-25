@@ -7,17 +7,17 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Repositório</th>
-                    <th scope="col">Issue</th>
+                    <th scope="col">Issue Título</th>
                     <th scope="col">Issue URL</th>
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Pizza</td>
-                    <td>Nome Issue</td>
-                    <td>https://urldaissue.com.br</td>
+                <tr *ngFor="let issue of issueGit; index as i">
+                    <td>{{ issue['number'] }}</td>
+                    <td>{{ issue['title'] }}</td>
+                    <td>{{ issue['title'] }}</td>
+                    <td>{{ issue['url'] }}</td>
                     <td>
                         <div class="container">
                             <div class="row">

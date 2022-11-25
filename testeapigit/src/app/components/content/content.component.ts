@@ -8,20 +8,42 @@ import { Octokit } from '@octokit/core';
 })
 
 export class ContentComponent implements OnInit {
-  
-  constructor() {}
+  issueGit = [];
+  repoGit = [];
+  constructor() {
+    this.loadIssue();
+    this.loadRepo();
+  }
 
-  ngOnInit(): void {
+  loadIssue = async () => {
     const octokit = new Octokit({
-      auth: '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'
+      auth: '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'
     })
     
-    const res = async () => {
-      await octokit.request('GET /repos/macieleustaquio/pizza/issues?milestone,state,assignee,creator,mentioned,labels,sort,direction,since,per_page,page', {
+    const res = await octokit.request('GET /repos/macieleustaquio/pizza/issues', {
         owner: 'OWNER',
         repo: 'REPO'
       })
-    }
+    console.log(res);
+    this.issueGit = res.data;
+    console.log(this.issueGit);
+  }
+
+  loadRepo = async () => {
+    const octokit = new Octokit({
+      auth: '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'
+    })
+    
+    const res = await octokit.request('GET /users/macieleustaquio/repos', {
+        owner: 'OWNER',
+        repo: 'REPO'
+      })
+    console.log(res);
+    this.repoGit = res.data;
+    console.log(this.repoGit);
+  }
+
+  ngOnInit(): void {
   }
 
 }
